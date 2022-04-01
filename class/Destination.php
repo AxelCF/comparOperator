@@ -8,7 +8,7 @@ class Destination{
     private $tourOperatorId;
 
     function __construct($data){
-
+        
     }
 
     function getId(){
