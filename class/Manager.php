@@ -19,13 +19,11 @@ class Manager{
         var_dump($result);
     }
 
-    function getOperatorByDestination($destination){
+    function getOperatorByDestination($destinationId){
         
-        $result = $this->bdd->query("SELECT location FROM destination WHERE location = '$destination'");
-        $result = $result->fetchAll();
+        $result = $this->bdd->query("SELECT name, link, destination.tour_operator_id, location FROM tour_operator INNER JOIN destination ON tour_operator.id=destination.tour_operator_id WHERE destination.id='$destinationId'");
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
         var_dump($result);
-
-        
     }
     
     function createReview(){
@@ -55,6 +53,6 @@ class Manager{
 }
 
 $req = new Manager();
-$req->getAllDestination();
-$req->getOperatorByDestination('Rome');
+// $req->getAllDestination();
+$req->getOperatorByDestination(4);
 ?>
