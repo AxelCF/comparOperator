@@ -29,27 +29,28 @@ class Manager{
     }
     
     function createReview(){
-        $send = $this->bdd->query("INSERT INTO reveiw(`message`) VALUES (?)");
+        $send = $this->bdd->query("INSERT INTO `review`(`message`, `author`, `tour_operator_id`) VALUES (?, ?, ?)");
     }
     
-    function getReviewByOperatorId(){
-        
+    function getReviewByOperatorId($operatorId){
+        $get = $this->bdd->query("SELECT * FROM `review` WHERE `tour_operator_id` = '$operatorId'");
+
     }
     
     function getAllOperator(){
-        
+        $get = $this->bdd->query("SELECT 'name', 'link' FROM tour_operator");
     }
 
-    function UpdateOperatorToPremium(){
-        
+    function UpdateOperatorToPremium($operatorId){
+        $get = $this->bdd->query("UPDATE 'tour_operator' SET `is_premium` = 1 WHERE `tour_operator_id` = '$operatorId'");
     }
     
     function createTourOperator(){
-        
+        $create = $this->bdd->query("INSERT INTO `tour_operator`(`name`, `link`, `grade_count`, `grade_total`, `is_premium`) VALUES  (?, ?, ?, ?, ?)");
     }
     
     function createDestination(){
-        
+        $create = $this->bdd->query("INSERT INTO `destination`(`location`, `price`, `tour_operator_id`) VALUES(?, ?, ?)");
     }
 }
 
