@@ -15,7 +15,6 @@ class Manager{
     function getAllDestination(){
         $result = $this->bdd->query('SELECT * FROM destination');
         $result = $result->fetchAll();
-        
         var_dump($result);
     }
 
