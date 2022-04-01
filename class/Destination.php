@@ -12,7 +12,7 @@ class Destination{
     }
 
     function getId(){
-
+        
     }
 
     function getLocation(){
