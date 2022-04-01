@@ -5,11 +5,11 @@ class Manager{
     private $bdd;
 
     function __construct(){
-
+        
     }
 
     function getAllDestination(){
-
+        
     }
 
     function getOperatorByDestination(){
