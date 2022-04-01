@@ -7,7 +7,9 @@ class Review{
     private $author;
     private $tourOperatorId;
 
-    function __construct($data)
+    function __construct($data){
+        
+    }
 
     function getId(){
 
