@@ -40,7 +40,14 @@ class Touroperateur{
     function getIsPremium(){
 
     }
-
+    private function hydrate($data){
+        $this->id = $data['id'] ?? null;
+        $this->name = $data['name'];
+        $this->link = $data['link'];
+        $this->gradeCount = $data['gradeCount'];
+        $this->gradeTotal = $data['gradeTotal'];
+        $this->isPremium = $data['isPremium'];
+    }
 
 }
 

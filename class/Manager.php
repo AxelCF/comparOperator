@@ -8,21 +8,30 @@ class Manager{
     public $operator;
 
     function __construct(){
-        include '../util/connection.php';
+        include './util/connection.php';
         $this->bdd = $bdd;
     }
 
     function getAllDestination(){
         $result = $this->bdd->query('SELECT * FROM destination');
-        $result = $result->fetchAll();
-        var_dump($result);
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
+        $allDestination = [];
+        foreach($result as $rlt){
+            array_push($allDestination, new Destination($rlt));
+        }
+        // echo '<pre>';
+        // var_dump($allDestination);
+        // echo '</pre>';
+        return $allDestination;
+        
+        
     }
 
     function getOperatorByDestination($destinationId){
         
         $result = $this->bdd->query("SELECT name, link, destination.tour_operator_id, location FROM tour_operator INNER JOIN destination ON tour_operator.id=destination.tour_operator_id WHERE destination.id='$destinationId'");
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($result);
+        // var_dump($result);
     }
     
     function createReview(){
@@ -54,4 +63,5 @@ class Manager{
 $req = new Manager();
 // $req->getAllDestination();
 $req->getOperatorByDestination(4);
+
 ?>
