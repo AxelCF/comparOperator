@@ -2,7 +2,7 @@
 
 class Manager{
 
-    private $bdd
+    private $bdd;
 
     function __construct(){
 
