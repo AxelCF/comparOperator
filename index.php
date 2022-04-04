@@ -30,7 +30,8 @@ $rltdestination = $manager->getAllDestination();
                         <button type="submit"><img src="<?= $result->getImage() ?>" alt="Boat" class="rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none">
                         <div class="p-6">
                             <h2 class="mb-2 font-bold text:xl md:text-2xl text-orange-700"><?= $result->getLocation() ?></h2>
-                            <p class="text-orange-700"><?= $result->getPrice() ?></p>
+                            <p class="text-orange-700">A partir de <?=$result->getPrice()?> € TTC </p>
+
                         </div></button>
                     </div>
                 </div>

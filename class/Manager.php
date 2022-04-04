@@ -42,8 +42,12 @@ class Manager{
             array_push($allOperator, new Touroperator($rlt));
         }
         return $allOperator;
-        var_dump($allOperator);
+        // var_dump($allOperator);
     }
+//    function getImageByLocation($location){
+  //      $result = $this->bdd->query("SELECT * FROM destination WHERE destination.location='$location'") ;
+ 
+    //}
    
     function createReview(){
         $send = $this->bdd->query("INSERT INTO `review`(`message`, `author`, `tour_operator_id`) VALUES (?, ?, ?)");
@@ -74,5 +78,3 @@ class Manager{
 $req = new Manager();
 // $req->getAllDestination();
 $req->getOperatorByDestination(4);
-
-?>
