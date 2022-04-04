@@ -44,7 +44,7 @@ class Manager{
         return $allOperator;
         var_dump($allOperator);
     }
-    
+   
     function createReview(){
         $send = $this->bdd->query("INSERT INTO `review`(`message`, `author`, `tour_operator_id`) VALUES (?, ?, ?)");
     }
