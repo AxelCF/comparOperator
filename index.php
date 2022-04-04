@@ -22,6 +22,8 @@ $rltdestination = $manager->getAllDestination();
             <!--responsive de w-1/3 -- laius 1/3 -->
             <form  method="get" action="./page.php">
                 <input type="hidden" name="id" value="<?= $result->getId()?>">
+                <input type="hidden" name="location" value="<?= $result->getLocation()?>">
+
                 <div class="p-10 ">
                     <h3 class="mb-4 font-bold text-orange-400"> </h3>
                     <div class="bg-white rounded-lg hover:shadow-2xl ease-in duration-150 md:flex">
