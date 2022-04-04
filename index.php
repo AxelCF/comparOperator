@@ -14,17 +14,18 @@ $rltdestination = $manager->getAllDestination();
     // $pdostmt = $bdd->query($sqlQuery);
     // $results = $pdostmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <div class="pt-12">
-        <h3 class="text-orange-400 bg-orange-200">Destination</h3>
+    <div class="pt-16 pb-5 bg-orange-200">
+
         <?php
         // var_dump($rltdestination);
         foreach ($rltdestination as $result) {
         ?>
             <!-- carte horizontal-->
             <!--responsive de w-1/3 -- laius 1/3 -->
-            <div class="p-10 bg-orange-200">
-                <h3 class="mb-4 font-bold text-orange-400"> </h3>
-                <div class="bg-white rounded-lg shadow-2xl md:flex">
+            <form method="get" action="./page.php" name="id" value="<?=$result['id']?>>
+                <div class="p-10 ">
+                    <h3 class="mb-4 font-bold text-orange-400"> </h3>
+                    <div class="bg-white rounded-lg shadow-2xl md:flex">
                     <img src="<?= $result->getImage() ?>" alt="Boat" class="rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none">
                     <div class="p-6">
                         <h2 class="mb-2 font-bold text:xl md:text-2xl text-orange-700"><?= $result->getLocation() ?></h2>
@@ -33,6 +34,7 @@ $rltdestination = $manager->getAllDestination();
                     </div>
                 </div>
             </div>
+        </form>
         <?php
         }
         ?>

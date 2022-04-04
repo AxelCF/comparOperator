@@ -24,14 +24,19 @@ class Manager{
         // echo '</pre>';
         return $allDestination;
         
-        
     }
 
     function getOperatorByDestination($destinationId){
         
-        $result = $this->bdd->query("SELECT name, link, destination.tour_operator_id, location FROM tour_operator INNER JOIN destination ON tour_operator.id=destination.tour_operator_id WHERE destination.id='$destinationId'");
+        $result = $this->bdd->query("SELECT * FROM tour_operator INNER JOIN destination ON tour_operator.id=destination.tour_operator_id WHERE destination.id='$destinationId'");
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
-        // var_dump($result);
+        $allOperator = [];
+        foreach($result as $rlt){
+            array_push($allOperator, new Touroperator($rlt));
+        }
+        return $allOperator;
+        var_dump($allOperator);
+        die;
     }
     
     function createReview(){
