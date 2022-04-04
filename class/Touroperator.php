@@ -41,6 +41,9 @@ class Touroperator{
     function getIsPremium(){
         return $this->isPremium;
     }
+    function imageTour(){
+        return $this->imageTour;
+    }
     private function hydrate($data){
         $this->id = $data['id'] ?? null;
         $this->name = $data['name'];
@@ -48,6 +51,7 @@ class Touroperator{
         $this->gradeCount = $data['grade_count'];
         $this->gradeTotal = $data['grade_total'];
         $this->isPremium = $data['is_premium'];
+        $this->imageTour = $data['image_tour'];
     }
 
 }
