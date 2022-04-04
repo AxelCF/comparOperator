@@ -4,7 +4,8 @@ include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
 $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
-
+// $byLocation = new Manager;
+// $imgLocation = $byLocation->getImageByLocation();
 
 // var_dump($rltOperator);
 // die;*
@@ -13,6 +14,7 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
 <div class="bg-orange-200">
     <h1 class="md:text-2xl text-orange-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Pour <?= $_GET['location'] ?></h1>
 
+    <!-- <img src="" alt="imageLocation" class="rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none md:ml-24 ml-0 mb-6"> -->
 
 
     <h1 class="text-orange-700 md:ml-24 ml-0">liste bdes opperateur pour cette destination</h1>
@@ -28,7 +30,18 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                     <?php if ($rlt->getIsPremium() == 1) {
                     ?>
                         <p class="text-orange-700"><a href="<?= $rlt->getLink() ?>"><?= $rlt->getLink() ?></a></p>
-                    <?php }  ?>
+                        <?php  } ?>
+                        <?php
+                        $a = $rlt->getTotal();
+                        $b = $rlt->getGradecount();
+
+                        if($a == 0 || $b == 0){
+                            $moyenne = 'pas de notation';
+                        }else{
+                        $moyenne = ($a/$b);
+                        }
+                        ?>
+                        <p class="text-orange-700">note du tour operateur <?= $moyenne ?></p>
                 </div>
             </div>
         </div>
