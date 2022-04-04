@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <title>MyTO</title>
 </head>
-<header>
+<header class="mb-12">
     <div class="select-none">
         <nav class="fixed top-0 bg-gray-100 w-full mb-6">
             <ul class="flex flex-row-reverse p-4 mr-4">
