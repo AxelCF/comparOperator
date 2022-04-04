@@ -36,7 +36,6 @@ class Manager{
         }
         return $allOperator;
         var_dump($allOperator);
-        die;
     }
     
     function createReview(){

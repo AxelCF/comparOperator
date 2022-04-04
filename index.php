@@ -15,7 +15,6 @@ $rltdestination = $manager->getAllDestination();
     <div class="pt-16 pb-5 bg-orange-200">
 
         <?php
-        // var_dump($rltdestination);
         foreach ($rltdestination as $result) {
 
         ?>
@@ -32,7 +31,6 @@ $rltdestination = $manager->getAllDestination();
                             <p class="text-orange-700"><?= $result->getPrice() ?></p>
                         </div>
                     </div>
-
                 </div>
             </form>
         <?php
