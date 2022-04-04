@@ -11,7 +11,7 @@
 </head>
 <header>
     <div class="select-none">
-        <nav class="fixed top-0 bg-gray-100 w-full">
+        <nav class="fixed top-0 bg-gray-100 w-full mb-6">
             <ul class="flex flex-row-reverse p-4 mr-4">
                 <li class="">
                     <form action="./" method="get" class="ml-4 mb-4 w-full md:mb-0">

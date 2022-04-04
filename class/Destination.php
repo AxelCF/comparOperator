@@ -6,6 +6,7 @@ class Destination{
     private $location;
     private $price;
     private $tourOperatorId;
+    private $image;
 
     function __construct($data){
         $this->hydrate($data);
@@ -23,6 +24,9 @@ class Destination{
         return $this->price;
 
     }
+    function getImage(){
+        return $this->image;
+    }
 
     function getTourOperateurId(){
         return $this->tourOperatorId;
@@ -32,6 +36,7 @@ class Destination{
         $this->location = $data['location'];
         $this->price = $data['price'];
         $this->tourOperatorId = $data['tour_operator_id'];
+        $this->image = $data['image_url'];
     }
 }
 

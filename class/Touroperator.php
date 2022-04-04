@@ -14,7 +14,7 @@ class Touroperateur{
     }
 
     function getId(){
-
+        return $this->id;
     }
 
     function getName(){
