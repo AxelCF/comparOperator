@@ -30,6 +30,13 @@ class Manager{
         
         $result = $this->bdd->query("SELECT * FROM tour_operator INNER JOIN destination ON tour_operator.id=destination.tour_operator_id WHERE destination.id='$destinationId'");
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
+
+        // return $allOperator;
+        // var_dump($allOperator);
+    }
+        function getOperatorsByLocation($location){
+        $result = $this->bdd->query("SELECT * FROM tour_operator INNER JOIN destination ON tour_operator.id=destination.tour_operator_id WHERE destination.location='$location'");
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
         $allOperator = [];
         foreach($result as $rlt){
             array_push($allOperator, new Touroperator($rlt));
