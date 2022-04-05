@@ -7,7 +7,7 @@ class Manager{
     public $operator;
 
     function __construct(){
-        include './util/connection.php';
+        include __DIR__ . '/../util/connection.php';
         $this->bdd = $bdd;
     }
 
@@ -65,8 +65,9 @@ class Manager{
         $get = $this->bdd->query("UPDATE 'tour_operator' SET `is_premium` = 1 WHERE `tour_operator_id` = '$operatorId'");
     }
     
-    function createTourOperator(){
-        $create = $this->bdd->query("INSERT INTO `tour_operator`(`name`, `link`, `grade_count`, `grade_total`, `is_premium`) VALUES  (?, ?, ?, ?, ?)");
+    function createTourOperator($name, $url, $isPremium){
+        $create = $this->bdd->prepare("INSERT INTO `tour_operator`(`name`, `link`, `is_premium`) VALUES  (?,?,?)");
+        $create->execute([$_POST['nameTo'], $_POST['urlTo'], $_POST['premium']]);
     }
     
     function createDestination(){
