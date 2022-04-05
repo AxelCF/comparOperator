@@ -22,7 +22,7 @@
                 </li>
                 <li class="text-xl font-mono pt-2 pr-6 hover:text-indigo-400 ease-in duration-100 cursor-pointer">Déconnexion</li>
                 <li class="text-xl font-mono pt-2 pr-6 hover:text-indigo-400 ease-in duration-100 cursor-not-allowed">autre chose</li>
-                <li class="text-xl font-mono pt-2 pr-6 hover:text-indigo-400 ease-in duration-100 cursor-pointer">Accueil</li>
+                <li class="text-xl font-mono pt-2 pr-6 hover:text-indigo-400 ease-in duration-100 cursor-pointer"><a href="index.php">Accueil</a></li>
             </ul>
         </nav>
         <br>
