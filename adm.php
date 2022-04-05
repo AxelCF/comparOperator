@@ -4,29 +4,38 @@ include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
 $rltdestination = $manager->getAllDestination();
+
+
 ?>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vous êtes connecté en qualité d'administrateur.</h1>
 
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter un tour-opérateur.</h1>
+<div class="md:ml-24 ml-3 mb-6 pl-5 pt-0">
     <p>Veuillez entrer les information suivante:</p>
-    <div class="container">
-        <form action="./process/envoi_msg.php" method="POST">
+    <form action="./process/envoi_msg.php" method="POST">
             <div class="info">
-                <label for="nameTo">Nom TO</label>
-                <input type="text" name="nameTo" required><br />
-                <label for="urlTo">Url TO</label>
-                <input type="text" name="urlTo" required><br />
-                <label for="premium">Premium</label>
-                <input type="checkbox" name="premium" required><br />
-                <button  type="submit" value="1">oui
-                </button>
-        </form>
+                <div class="p-1">
+                    <label  for="nameTo">Nom TO</label>
+                    <input type="text" name="nameTo" required class="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-full-name"><br />
+                </div>
+                <div class="p-1">
+                    <label for="urlTo">Url TO</label>
+                    <input type="text" name="urlTo" required class="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-full-name"><br />
+                </div>
+                <div class="p-1">
+                    <label for="premium">Premium</label>
+                    <input type="checkbox" name="premium" required class="focus:border-purple-500"><br/>
+                </div>
+                <button class="rounded-lg  border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit" value="1">Ajouter</button>
+            </div>
+</div>
+            
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter des destinations aux TO parmi une liste fixe.</h1>
 
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Passé en premium un TO.</h1>
 
 
-<h1 class="md:text-3xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">rien :</h1>
+<h1 class="md:text-3xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vue de l’utilisateur :</h1>
 <div class=" bg-orange-200 border-4 m-6 border-green-700 px-4 py-2 mt-2 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-lg">
     <?php
     foreach ($rltdestination as $result) {
