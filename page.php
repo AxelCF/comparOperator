@@ -1,6 +1,4 @@
 <?php
-var_dump('');
-
 include './partials/header.php';
 include './util/connection.php';
 include './util/autoload.php';

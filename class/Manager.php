@@ -1,6 +1,4 @@
 <?php
-var_dump('');
-
 class Manager{
 
     private $bdd;
