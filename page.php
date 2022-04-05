@@ -37,11 +37,16 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
 
                         if($a == 0 || $b == 0){
                             $moyenne = 'pas de notation';
+                            ?>
+                            <p class="text-orange-700"><?= $moyenne ?></p>
+                            <?php
                         }else{
                         $moyenne = ($a/$b);
+                        ?>
+                        <p class="text-orange-700">note du tour operateur <?= $moyenne ?> / 10</p>
+                        <?php
                         }
                         ?>
-                        <p class="text-orange-700">note du tour operateur <?= $moyenne ?></p>
                 </div>
             </div>
         </div>
