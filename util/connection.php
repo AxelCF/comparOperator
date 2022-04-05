@@ -9,7 +9,5 @@ try
     {
         var_dump($e);
         die('Erreur : '.$e->getMessage());
-    }
-
-    
+    } 
 ?>

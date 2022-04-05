@@ -1,13 +1,10 @@
 <?php
-var_dump('');
-
 include './partials/header.php';
 include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
 $rltdestination = $manager->getAllDestination();
 ?>
-ciucou
 <?php
 foreach ($rltdestination as $result) {
 ?>

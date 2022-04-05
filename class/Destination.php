@@ -1,5 +1,4 @@
 <?php
-var_dump('');
 class Destination{
 
     private $id;
