@@ -14,15 +14,15 @@ $rltoperator = $manager->getAllOperator();
     <p>Veuillez entrer les information suivante:</p>
     <form action="./process/envoi_msg.php" method="POST">
             <div class="info">
-                <div class="p-1">
+                <div class="p-1 oui">
                     <label  for="nameTo">Nom TO</label>
                     <input type="text" name="nameTo" required class="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-full-name"><br />
                 </div>
-                <div class="p-1">
+                <div class="p-1 oui">
                     <label for="urlTo">Url TO</label>
                     <input type="text" name="urlTo" required class="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500" id="inline-full-name"><br />
                 </div>
-                <div class="p-1">
+                <div class="p-1 oui">
                     <label for="premium">Premium</label>
                     <input type="checkbox" name="premium" required class="focus:border-purple-500"><br/>
                 </div>
