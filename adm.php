@@ -5,7 +5,7 @@ include './util/autoload.php';
 $manager = new Manager;
 $rltdestination = $manager->getAllDestination();
 
-
+$rltoperator = $manager->getAllOperator();
 ?>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vous êtes connecté en qualité d'administrateur.</h1>
 
@@ -29,9 +29,22 @@ $rltdestination = $manager->getAllDestination();
                 <button class="rounded-lg  border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit" value="1">Ajouter</button>
             </div>
 </div>
-            
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter des destinations aux TO parmi une liste fixe.</h1>
+<?php
+    foreach ($rltdestination as $destination){
+        ?>
+        <p><?=$destination->getLocation()?></p>
+        <?php
+    }
+    ?>
 
+    <?php
+    foreach ($rltoperator as $operator){
+        ?>
+        <p><?=$operator->getName()?></p>
+        <?php
+    }
+    ?>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Passé en premium un TO.</h1>
 
 
