@@ -12,7 +12,7 @@ class Manager{
     }
 
     function getAllDestination(){
-        $result = $this->bdd->query('SELECT * FROM destination GROUP BY location ORDER BY price ASC');');
+        $result = $this->bdd->query('SELECT * FROM destination GROUP BY location ORDER BY price ASC');
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
         $allDestination = [];
         foreach($result as $rlt){
