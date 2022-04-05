@@ -6,8 +6,23 @@ $manager = new Manager;
 $rltdestination = $manager->getAllDestination();
 ?>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vous êtes connecté en qualité d'administrateur.</h1>
+
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter un tour-opérateur.</h1>
+    <p>Veuillez entrer les information suivante:</p>
+    <div class="container">
+        <form action="./process/envoi_msg.php" method="POST">
+            <div class="info">
+                <label for="nameTo">Nom TO</label>
+                <input type="text" name="nameTo" required><br />
+                <label for="urlTo">Url TO</label>
+                <input type="text" name="urlTo" required><br />
+                <label for="premium">Premium</label>
+                <input type="checkbox" name="premium" required><br />
+                <button  type="submit" value="1">oui
+                </button>
+        </form>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter des destinations aux TO parmi une liste fixe.</h1>
+
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Passé en premium un TO.</h1>
 
 
