@@ -58,7 +58,16 @@ class Manager{
     }
     
     function getAllOperator(){
-        $get = $this->bdd->query("SELECT 'name', 'link' FROM tour_operator");
+        $result = $this->bdd->query("SELECT * FROM tour_operator");
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
+        $allOperator = [];
+        foreach($result as $rlt){
+            array_push($allOperator, new TourOperator($rlt));
+        }
+        // echo '<pre>';
+        // var_dump($allDestination);
+        // echo '</pre>';
+        return $allOperator;
     }
 
     function UpdateOperatorToPremium($operatorId){
