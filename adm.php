@@ -11,7 +11,7 @@ $rltoperator = $manager->getAllOperator();
 
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter un tour-opérateur.</h1>
 <div class="md:ml-24 ml-3 mb-6 pl-5 pt-0">
-    <p>Veuillez entrer les information suivante:</p>
+    <p class="mb-2">Veuillez entrer les information suivante :</p>
     <form action="./process/createoperator.php" method="POST">
             <div class="info">
                 <div class="p-1 oui">
@@ -32,8 +32,10 @@ $rltoperator = $manager->getAllOperator();
 </div>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter des destinations aux TO parmi une liste fixe.</h1>
 
+<div class="md:ml-24 ml-3 mb-6 pl-5 pt-0">
+    <p class="mb-2">Veuillez choisir une destination et un TO :</p>
 <form action="./process/addoperatortolocation.php" method="post">
-            <select name="locations">
+            <select name="locations" class="bg-gray-200 apparance-none border-2 border-gray-200 rounded py-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500">
     <?php foreach ($rltdestination as $destination){ ?>
     <option value="<?= $destination->getLocation()?>"><?=$destination->getLocation()?></option>
     <?php
@@ -41,7 +43,7 @@ $rltoperator = $manager->getAllOperator();
     </select>
     <label for="nameOperator">
             </label>
-            <select name="nameOperator">
+            <select name="nameOperator" class="bg-gray-200 apparance-none border-2 border-gray-200 rounded py-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500">
     <?php foreach ($rltoperator as $operator){ ?>
     <option value="<?= $operator->getId()?>"><?=$operator->getName()?></option>
     <?php
@@ -53,10 +55,29 @@ $rltoperator = $manager->getAllOperator();
                 </div>
                 <button class="rounded-lg  border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit" value="1">Ajouter</button>
 </form>
+</div>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Passé en premium un TO.</h1>
 
+<div class="md:ml-24 ml-3 mb-6 pl-5 pt-0">
+    <p class="mb-2">Selectionner un TO pour le passer en premium :</p>
+
+    <form action="./process/primeUpdate.php" method="post">
+            <select name="operatorid" class="bg-gray-200 apparance-none border-2 border-gray-200 rounded py-1 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-500">
+    <?php foreach ($rltoperator as $operator){ 
+        if($operator->getIsPremium()==0){?>
+    <option value=<?= $operator->getId()?>><?=$operator->getName()?></option>
+    <?php
+        }
+}?>
+    </select>
+    <button class="rounded-lg mt-1 border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit">Ajouter</button>
+</form>
+</div>
 
 <h1 class="md:text-3xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vue de l’utilisateur :</h1>
+
+
+
 <div class=" bg-orange-200 border-4 m-6 border-green-700 px-4 py-2 mt-2 rounded-tl-lg rounded-tr-lg rounded-br-lg rounded-bl-lg">
     <?php
     foreach ($rltdestination as $result) {

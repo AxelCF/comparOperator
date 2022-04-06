@@ -71,7 +71,8 @@ class Manager{
     }
 
     function UpdateOperatorToPremium($operatorId){
-        $get = $this->bdd->query("UPDATE 'tour_operator' SET `is_premium` = 1 WHERE `tour_operator_id` = '$operatorId'");
+        $get = $this->bdd->prepare("UPDATE tour_operator SET is_premium=1 WHERE id = '$operatorId'");
+        $get->execute();
     }
     
     function createTourOperator($name, $url, $isPremium){

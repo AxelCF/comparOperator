@@ -29,6 +29,7 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                     <h2 class="mb-2 font-bold text:xl md:text-2xl text-orange-700"></h2>
                     <?php if ($rlt->getIsPremium() == 1) {
                     ?>
+                        <p class="text-orange-700 font-bold">consulter le site de notre partenaire :</p>
                         <p class="text-orange-700"><a href="<?= $rlt->getLink() ?>"><?= $rlt->getLink() ?></a></p>
                         <?php  } ?>
                         <?php
@@ -47,6 +48,7 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                         <?php
                         }
                         ?>
+                        <h1>prix <?='pas de prix' ?></h1>
                 </div>
             </div>
         </div>
