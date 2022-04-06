@@ -4,6 +4,7 @@ include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
 $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
+
 // $byLocation = new Manager;
 // $imgLocation = $byLocation->getImageByLocation();
 
@@ -48,7 +49,10 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                         <?php
                         }
                         ?>
-                        <h1>prix <?='pas de prix' ?></h1>
+                        <h1>prix <?=
+                         $rlt->getPrice();
+                        'pas de prix'
+                         ?></h1>
                 </div>
             </div>
         </div>

@@ -56,10 +56,9 @@ $rltoperator = $manager->getAllOperator();
                 <button class="rounded-lg  border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit" value="1">Ajouter</button>
 </form>
 </div>
-<?php
-if ($operator->getIsPremium() == 0) {
-?>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Passé en premium un TO.</h1>
+<?php
+?>
 <div class="md:ml-24 ml-3 mb-6 pl-5 pt-0">
     <p class="mb-2">Selectionner un TO pour le passer en premium :</p>
 
@@ -75,9 +74,7 @@ if ($operator->getIsPremium() == 0) {
     <button class="rounded-lg mt-1 border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit">Ajouter</button>
 </form>
 </div>
-<?php }else{ ?>
-    <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Pas de Premium a ajouter</h1>
-<?php } ?>
+<?php ?>
 <h1 class="md:text-3xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vue de l’utilisateur :</h1>
 
 
