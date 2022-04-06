@@ -1,5 +1,4 @@
 <?php
-include '../partials/header.php';
 include '../util/connection.php';
 include '../util/autoload.php';
 $manager = new Manager;
