@@ -24,7 +24,7 @@ $rltoperator = $manager->getAllOperator();
                 </div>
                 <div class="p-1 oui">
                     <label for="premium">Premium</label>
-                    <input type="checkbox" name="premium" required class="focus:border-purple-500"><br/>
+                    <input type="text" name="premium" required class="focus:border-purple-500"><br/>
                 </div>
                 <button class="rounded-lg  border-2 hover:bg-green-700 hover:text-white border-green-700 px-4 py-1" type="submit" value="1">Ajouter</button>
             </div>
