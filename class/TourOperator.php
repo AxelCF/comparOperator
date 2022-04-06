@@ -1,5 +1,5 @@
 <?php
-class Touroperator{
+class TourOperator{
 
     private $id;
     private $name;

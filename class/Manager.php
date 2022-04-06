@@ -38,7 +38,7 @@ class Manager{
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
         $allOperator = [];
         foreach($result as $rlt){
-            array_push($allOperator, new Touroperator($rlt));
+            array_push($allOperator, new TourOperator($rlt));
         }
         return $allOperator;
         // var_dump($allOperator);
