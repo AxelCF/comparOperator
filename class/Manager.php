@@ -76,12 +76,17 @@ class Manager{
     
     function createTourOperator($name, $url, $isPremium){
         $create = $this->bdd->prepare("INSERT INTO `tour_operator`(`name`, `link`, `is_premium`) VALUES  (?,?,?)");
-        $create->execute([$_POST['nameTo'], $_POST['urlTo'], $_POST['premium']]);
+        $create->execute([$name, $url, $isPremium]);
+    }
+    function updateOperator($location, $price, $operatorId){
+        $update = $this->bdd->prepare("INSERT INTO `destination`(`location`, `price`, `tour_operator_id`) VALUES(?, ?, ?) ");
+        $update->execute([$location, $price, $operatorId]);
     }
     
     function createDestination(){
         $create = $this->bdd->query("INSERT INTO `destination`(`location`, `price`, `tour_operator_id`) VALUES(?, ?, ?)");
     }
+
 }
 
 $req = new Manager();
