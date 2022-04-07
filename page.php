@@ -23,36 +23,52 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
     foreach ($rltOperator as $rlt) {
     ?>
         <div class="p-10 ">
-            <h3 class="mb-4 font-bold text-orange-400"> </h3>
+            <h3 class="mb-4 font-bold text-orange-400 "> </h3>
             <div class="bg-white rounded-lg hover:shadow-2xl ease-in duration-150 md:flex">
-                <img class="rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none" src="<?= $rlt->imageTour() ?>" alt="">
-                <div class="p-6">
+                <img class="h-48 rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none" src="<?= $rlt->imageTour() ?>" alt="">
+                <!-- partie INFO -->
+                <div class="p-6 md:w-1/3">
                     <h2 class="mb-2 font-bold text:xl md:text-2xl text-orange-700"></h2>
                     <?php if ($rlt->getIsPremium() == 1) {
                     ?>
                         <p class="text-orange-700 font-bold">consulter le site de notre partenaire :</p>
                         <p class="text-orange-700"><a href="<?= $rlt->getLink() ?>"><?= $rlt->getLink() ?></a></p>
-                        <?php  } ?>
-                        <?php
-                        $a = $rlt->getTotal();
-                        $b = $rlt->getGradecount();
+                    <?php  } ?>
+                    <?php
+                    $a = $rlt->getTotal();
+                    $b = $rlt->getGradecount();
 
-                        if($a == 0 || $b == 0){
-                            $moyenne = 'pas de notation';
-                            ?>
-                            <p class="text-orange-700"><?= $moyenne ?></p>
-                            <?php
-                        }else{
-                        $moyenne = ($a/$b);
-                        ?>
+                    if ($a == 0 || $b == 0) {
+                        $moyenne = 'pas de notation';
+                    ?>
+                        <p class="text-orange-700"><?= $moyenne ?></p>
+                    <?php
+                    } else {
+                        $moyenne = ($a / $b);
+                    ?>
                         <p class="text-orange-700">note du tour operateur <?= $moyenne ?> / 10</p>
+                  
+                    <?php
+                    }
+                    ?>
+                    <h1>prix <?= 'pas de prix' ?></h1>
+                </div>
+                <!-- partie Review -->
+                <div class="align-center">
+                    <form action="./review.php" method="post">
+                        <input type="hidden" name="idOperator" value="<?= $rlt->getId()?>">
+                        <?php var_dump($rlt->getId());?>
+                        <button type="submit" class=""> commenter</button>
+                    </form>
+
                         <?php
                         }
                         ?>
                         <h1>prix <?=
                          $rlt->getPrice();
                         'pas de prix'
-                         ?></h1>
+                         ?>
+                  </h1>
                 </div>
             </div>
         </div>
