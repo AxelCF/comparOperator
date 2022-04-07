@@ -4,6 +4,7 @@ include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
 $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
+
 // $byLocation = new Manager;
 // $imgLocation = $byLocation->getImageByLocation();
 
@@ -46,6 +47,7 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                         $moyenne = ($a / $b);
                     ?>
                         <p class="text-orange-700">note du tour operateur <?= $moyenne ?> / 10</p>
+                  
                     <?php
                     }
                     ?>
@@ -59,6 +61,14 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                         <button type="submit" class=""> commenter</button>
                     </form>
 
+                        <?php
+                        }
+                        ?>
+                        <h1>prix <?=
+                         $rlt->getPrice();
+                        'pas de prix'
+                         ?>
+                  </h1>
                 </div>
             </div>
         </div>
