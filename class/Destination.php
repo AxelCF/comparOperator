@@ -5,6 +5,7 @@ class Destination{
     private $location;
     private $price;
     private $tourOperatorId;
+    private $tourOperator;
     private $image;
 
     function __construct($data){
@@ -33,9 +34,17 @@ class Destination{
     private function hydrate($data){
         $this->id = $data['id'] ?? null;
         $this->location = $data['location'];
-        $this->price = $data['MIN(price)'];
+        $this->price = $data['price'];
         $this->tourOperatorId = $data['tour_operator_id'];
         $this->image = $data['image_url'];
+    }
+
+    public function getTourOperator() {
+        return $this->tourOperator; 
+    }
+
+    public function setTourOperator($tourOperator) {
+        $this->tourOperator = $tourOperator;
     }
 }
 
