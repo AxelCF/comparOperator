@@ -16,6 +16,7 @@ class Manager{
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
         $allDestination = [];
         foreach($result as $rlt){
+            $rlt['price'] = $rlt['MIN(price)'];
             array_push($allDestination, new Destination($rlt));
         }
         // echo '<pre>';
@@ -26,7 +27,7 @@ class Manager{
     }
     function getImageDestiantion($iddesination){
         $result = $this->bdd->query('SELECT image_url FROM destination WHERE location = "$iddesination"');
-        $result = $result->fetchAll(PDO::FETCH_ASSOC);
+        $result = $result->fetch();
         return new Destination($result);
         
     }
@@ -39,12 +40,15 @@ class Manager{
         // return $allOperator;
         // var_dump($allOperator);
     }
-        function getOperatorsByLocation($location){
+        function getDestinationByLocation($location){
         $result = $this->bdd->query("SELECT * FROM destination INNER JOIN tour_operator ON tour_operator.id=destination.tour_operator_id WHERE destination.location='$location'");
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
         $allOperator = [];
         foreach($result as $rlt){
-            array_push($allOperator, new TourOperator($rlt));
+            $destination = new Destination($rlt);
+            $tourOperator = new TourOperator($rlt);
+            $destination->setTourOperator($tourOperator);
+            array_push($allOperator, $destination);
         }
         return $allOperator;
         // var_dump($allOperator);
@@ -69,7 +73,7 @@ class Manager{
         return $allOperator;
 
     }
-    
+
     function getAllOperator(){
         $result = $this->bdd->query("SELECT * FROM tour_operator");
         $result = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -99,6 +103,12 @@ class Manager{
     
     function createDestination(){
         $create = $this->bdd->query("INSERT INTO `destination`(`location`, `price`, `tour_operator_id`) VALUES(?, ?, ?)");
+    }
+
+    function areAllOperatorPremium(){
+        $premium = $this->bdd->query("SELECT * FROM tour_operator WHERE is_premium=0");
+        $premium = $premium->fetch();
+        return $premium;
     }
 
 }
