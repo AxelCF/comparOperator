@@ -48,12 +48,19 @@ class Manager{
  
     //}
    
-    function createReview(){
-        $send = $this->bdd->query("INSERT INTO `review`(`message`, `author`, `tour_operator_id`) VALUES (?, ?, ?)");
+    function createReview($auteur, $msg, $TOid){
+        $send = $this->bdd->prepare("INSERT INTO `review`(`message`, `author`, `tour_operator_id`) VALUES (?, ?, ?)");
+        $send->execute([$msg, $auteur, $TOid]);
     }
     
     function getReviewByOperatorId($operatorId){
-        $get = $this->bdd->query("SELECT * FROM `review` WHERE `tour_operator_id` = '$operatorId'");
+        $result = $this->bdd->query("SELECT * FROM review WHERE tour_operator_id = '$operatorId'");
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
+        $allOperator = [];
+        foreach($result as $rlt){
+            array_push($allOperator, new Review($rlt));
+        }
+        return $allOperator;
 
     }
     
