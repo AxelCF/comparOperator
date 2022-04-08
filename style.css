@@ -1,13 +1,6 @@
 button{
     display: flex;
-    /* transition: 0.3s; */
 }
-/* 
-a:hover{
-    box-shadow: 10px 10px 60px black;
-    transition: 0.3s;
-    border-radius: 20px;
-} */
 
 label{
     display: inline-block;
