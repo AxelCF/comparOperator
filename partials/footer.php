@@ -27,7 +27,7 @@
    <div class="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
       max-w-screen-lg items-center">
       <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
-         <a href="/#" class="w-6 mx-1">
+         <a href="https://www.instagram.com/adrthms/" target="_blank" class="w-6 mx-1">
             <svg class="fill-current cursor-pointer text-gray-500 hover:text-blue-800" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
                <path id="Facebook" d="M24,12c0,6.627 -5.373,12 -12,12c-6.627,0 -12,-5.373 -12,-12c0,-6.627
                   5.373,-12 12,-12c6.627,0 12,5.373
@@ -36,7 +36,7 @@
                   -2.103,2.102l0,0.97l-0.969,0l0,1.617l0.969,0l0,4.689l1.941,0l0,-4.689Z"></path>
             </svg>
          </a>
-         <a href="/#" class="w-6 mx-1">
+         <a href="https://www.instagram.com/adrthms/" target="_blank" class="w-6 mx-1">
             <svg class="fill-current cursor-pointer text-gray-500 hover:text-red-600" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
                <g id="Layer_1">
                   <circle id="Oval" cx="12" cy="12" r="12"></circle>
@@ -57,7 +57,7 @@
                </g>
             </svg>
          </a>
-         <a href="/#" class="w-6 mx-1">
+         <a href="https://www.instagram.com/adrthms/" target="_blank" class="w-6 mx-1">
             <svg class="fill-current cursor-pointer text-gray-500 hover:text-sky-900" width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2;">
                <path id="Combined-Shape" d="M12,24c6.627,0 12,-5.373 12,-12c0,-6.627 -5.373,-12 -12,-12c-6.627,0
                   -12,5.373 -12,12c0,6.627 5.373,12 12,12Zm6.591,-15.556l-0.722,0c-0.189,0

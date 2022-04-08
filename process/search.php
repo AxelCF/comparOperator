@@ -4,7 +4,7 @@ include '../util/autoload.php';
 $search = $_POST['Search'];
     // var_dump($search);
     // die;
-$sql = "SELECT * FROM destination WHERE location LIKE '$search'";
+$sql = "SELECT * FROM destination WHERE location LIKE '%".$search."%'";
 $result = $bdd->query($sql);
 $rlt = $result->fetch();
 

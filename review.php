@@ -16,7 +16,7 @@ $rltReview = $manager->getReviewByOperatorId($_GET['idOperator']);
     ?>
     </pre>
 
-    <H1 class="p-10">commentaire : </H1>
+    <H1 class="pl-20 m-5 text-green-500 text-2xl ">Donnez-nous votre avis ☺ </H1>
     <div class="m-10 border-4  border-gray-400 rounded-lg bg-slate-100">
 
         <?php
@@ -33,11 +33,14 @@ $rltReview = $manager->getReviewByOperatorId($_GET['idOperator']);
         ?>
         <form action="./process/sendReview.php" method="post">
             <div class="m-5">
-                <label for="Nickname">Nom</label>
-                <input name="Nickname" type="text" placeholder="votre Nom" class="">
-                <label for="Comment">Review</label>
-                <input name="Comment" type="text" placeholder="commenter" class="bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-1 text-gray-700 leading-tight focus:outline-none focus:bg-white">
-                <select name="Grades">
+                <label for="Nickname">Nom :</label>
+                <br>
+                <input name="Nickname" type="text" placeholder="votre Nom" class="lg:w-1/4 sm:w-2/4 w-full bg-gray-200 focus:bg-white appearance-none border-2 border-gray-200 rounded focus:outline-none py-1  px-2 ">
+                <br>
+                <label for="Comment">Review :</label>
+                <input name="Comment" type="text" placeholder="commenter" class="w-full my-1 bg-gray-200 appearance-none border-2 border-gray-200 rounded  py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:bg-white">
+                <!-- PARTIE BONUS -->
+                <!-- <select name="Grades">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -48,11 +51,15 @@ $rltReview = $manager->getReviewByOperatorId($_GET['idOperator']);
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
-                </select>
+                </select> -->
                 <input type="hidden" name="idOperator" value="<?= $_GET['idOperator'] ?>">
-                <button> send</button>
+                <button class="text-green-600 mt-1 border-2 border-green-600 px-2 rounded-lg focus:bg-green-600 focus:text-white">envoyer</button>
             </div>
         </form>
     </div>
 
 </section>
+
+<?php
+include './partials/footer.php';
+?>
