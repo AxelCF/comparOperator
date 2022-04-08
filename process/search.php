@@ -14,3 +14,4 @@ if ($rlt) {
 }else{
     header('Location: ../index.php');
 }
+
