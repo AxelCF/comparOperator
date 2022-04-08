@@ -55,7 +55,7 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                     <!-- troisieme partie -->
                     <!-- partie Review -->
                     <div class="align-center">
-                        <form action="./review.php" method="post">
+                        <form action="./review.php?idOperator=<?= $rlt->getId()?>" method="post">
                             <input type="hidden" name="idOperator" value="<?= $rlt->getId() ?>">
                             <?php var_dump($rlt->getId()); ?>
                             <button type="submit" class=""> commenter</button>

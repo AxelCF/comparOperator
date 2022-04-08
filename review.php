@@ -3,7 +3,7 @@ include './partials/header.php';
 include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
-$rltReview = $manager->getReviewByOperatorId($_POST['idOperator']);
+$rltReview = $manager->getReviewByOperatorId($_GET['idOperator']);
 ?>
 <section class="m-5">
 
@@ -49,7 +49,7 @@ $rltReview = $manager->getReviewByOperatorId($_POST['idOperator']);
                     <option value="9">9</option>
                     <option value="10">10</option>
                 </select>
-                <input type="hidden" name="idOperator" value="<?= $_POST['idOperator'] ?>">
+                <input type="hidden" name="idOperator" value="<?= $_GET['idOperator'] ?>">
                 <button> send</button>
             </div>
         </form>
