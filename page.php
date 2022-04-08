@@ -4,19 +4,24 @@ include './util/connection.php';
 include './util/autoload.php';
 $manager = new Manager;
 $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
+$rltlocation = $manager->getImageDestiantion($_GET['location']);
 
-// $byLocation = new Manager;
-// $imgLocation = $byLocation->getImageByLocation();
+?>
+<pre> <?php
+// var_dump($rltlocation);
+// die;
+?>
+</pre> <?php
 
-// var_dump($rltOperator);
-// die;*
 
 ?>
 <div class="bg-orange-200">
     <h1 class="md:text-2xl text-orange-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Pour <?= $_GET['location'] ?></h1>
 
     <!-- <img src="" alt="imageLocation" class="rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none md:ml-24 ml-0 mb-6"> -->
-
+    
+    
+    <img src="<?=$rltlocation->getImage()?>">
 
     <h1 class="text-orange-700 md:ml-24 ml-0">liste bdes opperateur pour cette destination</h1>
     <?php
