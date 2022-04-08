@@ -26,7 +26,8 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
             <h3 class="mb-4 font-bold text-orange-400"> </h3>
             <div class="bg-white rounded-lg hover:shadow-2xl ease-in duration-150 md:flex">
                 <img class="rounded-t-lg md:w-1/3 md:rounded-l-lg md:rounded-t-none" src="<?= $rlt->imageTour() ?>" alt="">
-                <div class="p-6">
+                <!-- deuxieme partie  -->
+                <div class="p-6 md:w-1/3">
                     <h2 class="mb-2 font-bold text:xl md:text-2xl text-orange-700"></h2>
                     <?php if ($rlt->getIsPremium() == 1) {
                     ?>
@@ -51,21 +52,23 @@ $rltOperator = $manager->getOperatorsByLocation($_GET['location']);
                     ?>
                     <h1>prix <?= 'pas de prix' ?></h1>
                 </div>
+                    <!-- troisieme partie -->
+                    <!-- partie Review -->
+                    <div class="align-center">
+                        <form action="./review.php" method="post">
+                            <input type="hidden" name="idOperator" value="<?= $rlt->getId() ?>">
+                            <?php var_dump($rlt->getId()); ?>
+                            <button type="submit" class=""> commenter</button>
+                        </form>
+                    </div>
             </div>
         </div>
         </h1>
     <?php
     }
     ?>
-    <!-- partie Review -->
-    <div class="align-center">
-        <form action="./review.php" method="post">
-            <input type="hidden" name="idOperator" value="<?= $rlt->getId() ?>">
-            <?php var_dump($rlt->getId()); ?>
-            <button type="submit" class=""> commenter</button>
-        </form>
 
-    </div>
+
 </div>
 <?php
 include './partials/footer.php';
