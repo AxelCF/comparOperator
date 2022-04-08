@@ -5,6 +5,7 @@ include './util/autoload.php';
 $manager = new Manager;
 $rltdestination = $manager->getAllDestination();
 $rltoperator = $manager->getAllOperator();
+$premium = $manager->areAllOperatorPremium();
 ?>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vous êtes connecté en qualité d'administrateur.</h1>
 <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Ajouter un tour-opérateur.</h1>
@@ -55,8 +56,8 @@ $rltoperator = $manager->getAllOperator();
 </div>
 
 <?php
-foreach ($rltoperator as $operator) {
-    if ($operator->getIsPremium() == 0) { ?>
+
+    if ($premium) { ?>
         <h1 class="md:text-2xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Passé en premium un TO.</h1>
         <div class="md:ml-24 ml-3 mb-6 pl-5 pt-0">
             <p class="mb-2">Selectionner un TO pour le passer en premium :</p>
@@ -76,7 +77,7 @@ foreach ($rltoperator as $operator) {
         </div><?php
 
             }
-        }
+        
                 ?>
 
 <h1 class="md:text-3xl text-green-700 block font-bold md:ml-24 ml-0 mb-6 pt-6">Vue de l’utilisateur :</h1>
