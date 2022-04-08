@@ -19,7 +19,7 @@ $rltDestinations = $manager->getDestinationByLocation($_GET['location']);
 
     <img src="<?= $rltDestinations[0]->getImage() ?>" alt="">
 
-    <h1 class="text-orange-700 md:ml-24 ml-0">liste bdes opperateur pour cette destination</h1>
+    <h1 class="text-orange-700 md:ml-24 ml-0">liste des opperateurs pour cette destination</h1>
     <?php
     foreach ($rltDestinations as $rlt) {
     ?>
@@ -35,7 +35,7 @@ $rltDestinations = $manager->getDestinationByLocation($_GET['location']);
                         <p class="text-orange-700 font-bold">consulter le site de notre partenaire :</p>
                         <p class="text-orange-700"><a href="<?= $rlt->getTourOperator()->getLink() ?>"><?= $rlt->getTourOperator()->getLink() ?></a></p>
                     <?php  } ?>
-                        <h2 class=" font-bold text:xl md:text-xl text-orange-700">offre de <?= $rlt->getName()?></h2>
+                        <h2 class=" font-bold text:xl md:text-xl text-orange-700">offre de <?= $rlt->getTourOperator()->getName()?></h2>
                     <?php
                     $a = $rlt->getTourOperator()->getTotal();
                     $b = $rlt->getTourOperator()->getGradecount();
