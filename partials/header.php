@@ -14,9 +14,9 @@
         <nav class="fixed top-0 bg-gray-100 w-full mb-6">
             <ul class="flex flex-row-reverse p-4 mr-4">
                 <li class="">
-                    <form action="./" method="get" class="ml-4 mb-4 w-full md:mb-0">
-                        <label for="search" class="hidden">rechercher</label>
-                        <input type="text" class="p-2 border rounded-lg w-full bg-grey-lightest focus:border-orange focus:shadow-inner" placeholder="rechercher" />
+                    <form action="./process/search.php" method="post" class="ml-4 mb-4 w-full md:mb-0">
+                        <label for="Search" class="hidden">rechercher</label>
+                        <input type="text"  name="Search" class="p-2 border rounded-lg w-full bg-grey-lightest focus:border-orange focus:shadow-inner" placeholder="rechercher" />
                         <button class="hidden">rechercher</button>
                     </form>
                 </li>
@@ -30,3 +30,4 @@
     </div>
 
 </header>
+

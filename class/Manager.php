@@ -24,6 +24,12 @@ class Manager{
         return $allDestination;
         
     }
+    function getImageDestiantion($iddesination){
+        $result = $this->bdd->query('SELECT image_url FROM destination WHERE location = "$iddesination"');
+        $result = $result->fetchAll(PDO::FETCH_ASSOC);
+        return new Destination($result);
+        
+    }
 
     function getOperatorByDestination($destinationId){
         
