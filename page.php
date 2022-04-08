@@ -39,6 +39,7 @@ $rltlocation = $manager->getImageDestiantion($_GET['location']);
                         <p class="text-orange-700 font-bold">consulter le site de notre partenaire :</p>
                         <p class="text-orange-700"><a href="<?= $rlt->getLink() ?>"><?= $rlt->getLink() ?></a></p>
                     <?php  } ?>
+                        <h2 class=" font-bold text:xl md:text-xl text-orange-700">offre de <?= $rlt->getName()?></h2>
                     <?php
                     $a = $rlt->getTotal();
                     $b = $rlt->getGradecount();
@@ -59,11 +60,12 @@ $rltlocation = $manager->getImageDestiantion($_GET['location']);
                 </div>
                     <!-- troisieme partie -->
                     <!-- partie Review -->
-                    <div class="align-center">
+                    <div class="w-1/3">
                         <form action="./review.php?idOperator=<?= $rlt->getId()?>" method="post">
                             <input type="hidden" name="idOperator" value="<?= $rlt->getId() ?>">
-                            <?php var_dump($rlt->getId()); ?>
-                            <button type="submit" class=""> commenter</button>
+                            <div class="flex top-50 m-16">
+                                <button type="submit" class="text-2xl text-orange-700 mt-1 border-2 border-orange-700 px-2 rounded-lg focus:bg-orange-700 focus:text-white">commenter</button>
+                            </div>
                         </form>
                     </div>
             </div>
