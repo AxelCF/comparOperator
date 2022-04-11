@@ -1,9 +1,7 @@
 <?php
 try
     {
-        $bdd = new PDO('mysql:host=127.0.0.1;dbname=comparo_simple;charset=utf8', 'root', '', [
-                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-        ]);
+        $bdd = new PDO('sqlite:'.__DIR__.'/../db.sqlite3');
     }
     catch(Exception $e)
     {

@@ -25,7 +25,7 @@ class Manager{
         return $allDestination;
         
     }
-    function getImageDestiantion($iddesination){
+    function getImageDestination($iddesination){
         $result = $this->bdd->query('SELECT image_url FROM destination WHERE location = "$iddesination"');
         $result = $result->fetch();
         return new Destination($result);
